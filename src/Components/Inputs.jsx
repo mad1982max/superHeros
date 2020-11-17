@@ -5,12 +5,14 @@ export class Inputs extends React.Component {
     count: 0,
   };
 
-  clickFn = () => console.log("clicked");
+  clickFn = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
 
   render() {
     return (
       <button className="counter" onClick={this.clickFn}>
-        Counter
+        {`Counter: ${this.state.count}`}
       </button>
     );
   }

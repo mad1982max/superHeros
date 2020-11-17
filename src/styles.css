@@ -1,20 +1,34 @@
+body {
+  background: rgb(238, 237, 237);
+}
+
+.app {
+  margin: auto;
+}
+
+.header {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(37, 46, 54);
+}
+
 .user-card {
   margin: 6px;
   padding: 3px;
-  background: linear-gradient(30deg, rgba(42, 111, 42, 1), #ddeb25);
+  background: linear-gradient(30deg, rgb(42, 111, 42), #ddeb25);
   display: inline-flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   border-radius: 5px;
   flex-direction: column;
-  transition: background-color 0.5s;
+  transition: background-color 0.7s;
 }
 
 .user-img {
   width: 90%;
   overflow: hidden;
   background: rgb(255, 255, 255);
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   position: relative;
   text-align: center;
   height: 120px;
@@ -26,6 +40,7 @@
   line-height: 16px;
   color: aliceblue;
   text-transform: uppercase;
+  padding: 5px 0;
 }
 
 img {
