@@ -27,6 +27,20 @@ const superHeroes = [
     photo: "batman.jpg",
     company: "DC.png",
   },
+  {
+    name: "Super Woman",
+    height: 175,
+    weight: 60,
+    photo: "sw.jpg",
+    company: "DC.png",
+  },
+  {
+    name: "Super Man",
+    height: 182,
+    weight: 85,
+    photo: "sm.jpg",
+    company: "DC.png",
+  },
 ];
 
 const App = () => (
