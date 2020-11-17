@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles.css";
+import { Header } from "./Components/Header.jsx";
+import { Inputs } from "./Components/Inputs.jsx";
+import { UserCards } from "./Components/UserCards.jsx";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const superHeroes = [
+  {
+    name: "IRON MAN",
+    height: 175,
+    weight: 80,
+    photo: "im.jpg",
+  },
+  {
+    name: "HULK",
+    height: 250,
+    weight: 300,
+    photo: "hulk.jpg",
+  },
+];
+
+const App = () => (
+  <div className="app">
+    <Header />
+    <UserCards superHeroes={superHeroes} />
+    <Inputs />
+  </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const rootElement = document.getElementById("root");
+// we render the JSX element using the ReactDOM package
+ReactDOM.render(<App />, rootElement);
