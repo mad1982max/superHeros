@@ -11,12 +11,21 @@ const superHeroes = [
     height: 175,
     weight: 80,
     photo: "im.jpg",
+    company: "Marvel.png",
   },
   {
     name: "HULK",
     height: 250,
     weight: 300,
     photo: "hulk.jpg",
+    company: "Marvel.png",
+  },
+  {
+    name: "Batman",
+    height: 180,
+    weight: 90,
+    photo: "batman.jpg",
+    company: "DC.png",
   },
 ];
 
