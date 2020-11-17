@@ -1,18 +1,16 @@
 import React from "react";
 
-const buttonStyles = {
-  padding: "10px 20px",
-  border: "none",
-  borderRadius: 5,
-};
-
 export class Inputs extends React.Component {
+  state = {
+    count: 0,
+  };
+
   clickFn = () => console.log("clicked");
 
   render() {
     return (
-      <button onClick={this.clickFn} style={buttonStyles}>
-        PUSHER
+      <button className="counter" onClick={this.clickFn}>
+        Counter
       </button>
     );
   }
