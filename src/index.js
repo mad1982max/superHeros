@@ -14,7 +14,6 @@ class App extends React.Component {
 
   chooseHeroFn = (heroName) => {
     let heroObject = superHeroes.find((hero) => hero.name === heroName);
-    console.log("hero:", heroObject);
     this.setState({ currentHero: heroObject });
   };
 
@@ -22,11 +21,10 @@ class App extends React.Component {
     return (
       <div className="app">
         <Header />
+        <Inputs />
         <UserCards superHeroes={superHeroes} clickHero={this.chooseHeroFn} />
 
         {this.state.currentHero && <HeroInfo hero={this.state.currentHero} />}
-
-        <Inputs />
       </div>
     );
   }

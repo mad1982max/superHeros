@@ -42,7 +42,7 @@ const superHeroes = [
     company: "DC",
   },
   {
-    name: "Catwoman",
+    name: "Cat Woman",
     height: 168,
     weight: 55,
     photo: "catwoman.jpg",
