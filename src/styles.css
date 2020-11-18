@@ -4,6 +4,14 @@ body {
 
 .app {
   margin: auto;
+  max-width: 800px;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .header {
@@ -14,13 +22,14 @@ body {
 .user-card {
   margin: 6px;
   padding: 3px;
-  background: linear-gradient(30deg, rgb(42, 111, 42), #ddeb25);
+  background: linear-gradient(30deg, #858d15, #1f521f, #d2dd30);
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
   flex-direction: column;
   transition: background-color 0.7s;
+  box-shadow: 5px 5px 7px -2px #8d8e8d;
 }
 
 .user-img {
@@ -57,8 +66,7 @@ img {
 }
 
 .user-card:hover {
-  background: #990000;
-  background: linear-gradient(30deg, #990000, #ddeb25);
+  box-shadow: 5px 5px 7px -2px #4e4e4e;
   cursor: pointer;
 }
 
@@ -91,4 +99,31 @@ img {
 
 button:active {
   transform: translateY(2px);
+}
+
+.infoWrapper {
+  background: linear-gradient(30deg, #797978 0%, #414040 100%, #797978 100%);
+  border-radius: 4px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 5px 5px 7px -2px #8d8e8d;
+}
+
+.raw {
+  display: flex;
+  padding: 5px;
+  color: aliceblue;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.param {
+  /* width: 100px; */
+  /* text-align: right; */
+}
+
+.val {
+  /* text-align: right; */
+  /* background: rgb(184, 158, 158); */
+  /* width: 50px; */
 }
