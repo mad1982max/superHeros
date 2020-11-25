@@ -11,9 +11,16 @@ export class Inputs extends React.Component {
 
   render() {
     return (
-      <button className="counter" onClick={this.clickFn}>
-        {`Counter: ${this.state.count}`}
-      </button>
+      <>
+        <label htmlFor="male">Male</label>
+        <input id="male" type="checkbox" />
+        <label htmlFor="female">Female</label>
+        <input id="female" type="checkbox" />
+
+        <button className="counter" onClick={this.clickFn}>
+          {`Counter: ${this.state.count}`}
+        </button>
+      </>
     );
   }
 }
