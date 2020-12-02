@@ -4,7 +4,8 @@ export class HeroInfo extends React.Component {
   render() {
     let heroHeight = "";
     let heroWeight = "";
-    if (this.props.hero !== "") {
+    if (this.props.hero) {
+      console.log(this.props.hero);
       let { height, weight } = this.props.hero;
       heroHeight = height;
       heroWeight = weight;
