@@ -1,0 +1,22 @@
+.filters {
+  background: rgb(180, 243, 213);
+  padding: 5px;
+}
+
+.counter {
+  padding: "10px 20px";
+  border: "none";
+  border-radius: 5;
+  display: block;
+  outline: none;
+  border: none;
+  padding: 5px;
+  background: rgb(33, 105, 214);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(2px);
+}

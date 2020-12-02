@@ -1,7 +1,8 @@
 import React from "react";
+import "./header.css";
 
 export class Header extends React.Component {
   render() {
-    return <h2 className="header">SUPER HEROES</h2>;
+    return <div className="header">SUPER HEROES</div>;
   }
 }

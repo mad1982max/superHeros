@@ -1,5 +1,5 @@
 import React from "react";
-const logos = require.context("../logos", true);
+const logos = require.context("../../logos", true);
 
 export class Sticker extends React.Component {
   render() {

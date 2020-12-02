@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
-import { Sticker } from "./Sticker";
+import React from "react";
+import { Sticker } from "../Stickers/Sticker";
+import "./herocards.css";
 
-const images = require.context("../img", true);
+const images = require.context("../../img", true);
 
-export class UserCards extends React.Component {
+export class HeroCards extends React.Component {
   // state = {
   //   checkedHeroes: [],
   // };
@@ -40,7 +41,7 @@ export class UserCards extends React.Component {
     element.classList.toggle("checkedGrey");
   };
 
-  leaveCardCard = (e) => {
+  leaveCard = (e) => {
     this.props.clickHero("");
   };
 
@@ -51,25 +52,28 @@ export class UserCards extends React.Component {
       return (
         <div
           key={name}
-          className="user-card"
+          className="hero-card"
           onClick={this.clickOnCard}
           onMouseEnter={this.hoverOnCard}
-          onMouseLeave={this.leaveCardCard}
-          data-name={name}>
-          <div className="user-img">
+          onMouseLeave={this.leaveCard}
+          data-name={name}
+        >
+          <div className="hero-img">
             <Sticker logo={company} />
             <img className="photo" src={imageHero} alt={name} />
           </div>
-          <div className="user-name">{name}</div>
+          <div className="hero-name">{name}</div>
         </div>
       );
     });
 
     return (
-      <Fragment>
-        <div>You choose: {this.state.checkedHeroes.join(";")}</div>
-        <div className="cards">{users}</div>
-      </Fragment>
+      <>
+        <div className="cards-wrapper">
+          <div>You choose: {this.state.checkedHeroes.join(";")}</div>
+          <div className="cards">{users}</div>
+        </div>
+      </>
     );
   }
 }
