@@ -36,8 +36,8 @@
 }
 
 .hero-name {
-  font-size: 16px;
-  line-height: 16px;
+  /* font-size: 16px;
+  line-height: 16px; */
   color: aliceblue;
   text-transform: uppercase;
   padding: 5px 0;
@@ -66,4 +66,32 @@ img {
 
 .photo {
   transition: transform 0.5s;
+}
+
+.checkedGrey {
+  filter: grayscale(100%);
+  transition: 0.4s;
+  opacity: 0.9;
+  transform: scale(0.8);
+}
+
+.choose-label {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px;
+  line-height: 40px;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.span-hero-wrapper {
+  padding: 5px;
+  background: rgb(192, 191, 191);
+  box-shadow: 5px 5px 7px -2px #8d8e8d;
+  border-radius: 4px;
+  margin: 8px;
+  text-transform: uppercase;
 }

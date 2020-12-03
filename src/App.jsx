@@ -13,7 +13,7 @@ export default class App extends React.Component {
   };
 
   chooseHeroFn = (heroName) => {
-    let heroObject = superHeroes.find((hero) => hero.name === heroName);
+    let heroObject = superHeroes.find((hero) => hero.name === heroName) || {};
     this.setState({ currentHero: heroObject });
   };
 
@@ -22,10 +22,10 @@ export default class App extends React.Component {
       <div className="app">
         <Header />
         <Filters />
-        <HeroInfo hero={this.state.currentHero} />
-        <HeroCards superHeroes={superHeroes} clickHero={this.chooseHeroFn} />
-
-        {this.state.currentHero && <HeroInfo hero={this.state.currentHero} />}
+        <div className="hero-wrapper">
+          <HeroInfo hero={this.state.currentHero} />
+          <HeroCards superHeroes={superHeroes} hoverHero={this.chooseHeroFn} />
+        </div>
       </div>
     );
   }

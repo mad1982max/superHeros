@@ -1,5 +1,12 @@
+@font-face {
+  font-family: r;
+  src: url("./fonts/r.ttf") format("truetype");
+}
+
 body {
   background: rgb(238, 237, 237);
+  font-family: r;
+  box-sizing: border-box;
 }
 
 .app {
@@ -16,31 +23,6 @@ body {
   z-index: 10;
 }
 
-.infoWrapper {
-  background: linear-gradient(
-    45deg,
-    #3f68e2 0%,
-    #27418d 30%,
-    #27418d 70%,
-    #3f68e2 100%
-  );
-  border-radius: 4px;
-  width: 150px;
-  margin: auto;
-  box-shadow: 5px 5px 7px -2px #8d8e8d;
-}
-
-.raw {
+.hero-wrapper {
   display: flex;
-  padding: 5px;
-  color: aliceblue;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.checkedGrey {
-  filter: grayscale(100%);
-  transition: 0.4s;
-  opacity: 0.9;
-  transform: scale(0.8);
 }

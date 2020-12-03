@@ -1,0 +1,27 @@
+.info-card {
+  background: linear-gradient(
+    45deg,
+    #3f68e2 0%,
+    #27418d 30%,
+    #27418d 70%,
+    #3f68e2 100%
+  );
+  border-radius: 4px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 5px 5px 7px -2px #8d8e8d;
+  max-width: 30%;
+}
+
+.val {
+  width: 50px;
+  text-align: center;
+}
+
+.raw {
+  display: flex;
+  padding: 5px;
+  color: aliceblue;
+  align-items: center;
+  justify-content: space-between;
+}

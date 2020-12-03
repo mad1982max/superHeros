@@ -1,27 +1,23 @@
 import React from "react";
+import "./heroInfo.css";
 
 export class HeroInfo extends React.Component {
   render() {
-    let heroHeight = "";
-    let heroWeight = "";
-    if (this.props.hero) {
-      console.log(this.props.hero);
-      let { height, weight } = this.props.hero;
-      heroHeight = height;
-      heroWeight = weight;
-    }
+    let { height = "", weight = "" } = this.props.hero;
 
     return (
-      <div className="infoWrapper">
+      // <div className="info-wrapper">
+      <div className="info-card">
         <div className="raw">
           <div className="param">HEIGHT:</div>
-          <div className="val">{heroHeight}</div>
+          <div className="val">{height}</div>
         </div>
         <div className="raw">
           <div className="param">WEIGHT:</div>
-          <div className="val">{heroWeight}</div>
+          <div className="val">{weight}</div>
         </div>
       </div>
+      // </div>
     );
   }
 }

@@ -16,7 +16,7 @@ export class HeroCards extends React.Component {
 
   hoverOnCard = (e) => {
     let name = e.currentTarget.dataset.name;
-    this.props.clickHero(name);
+    this.props.hoverHero(name);
   };
 
   clickOnCard = (e) => {
@@ -42,7 +42,7 @@ export class HeroCards extends React.Component {
   };
 
   leaveCard = (e) => {
-    this.props.clickHero("");
+    this.props.hoverHero("");
   };
 
   render() {
@@ -70,7 +70,20 @@ export class HeroCards extends React.Component {
     return (
       <>
         <div className="cards-wrapper">
-          <div>You choose: {this.state.checkedHeroes.join(";")}</div>
+          {this.state.checkedHeroes.length > 0 ? (
+            <div className="choose-label align-left">
+              You choosed:{" "}
+              {this.state.checkedHeroes.map((hero, index) => (
+                <span key={hero + index} className="span-hero-wrapper">
+                  {" "}
+                  {hero}{" "}
+                </span>
+              ))}
+            </div>
+          ) : (
+            <div className="choose-label">Choose your heroes!</div>
+          )}
+
           <div className="cards">{users}</div>
         </div>
       </>
