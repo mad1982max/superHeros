@@ -10,6 +10,9 @@ import { HeroInfo } from "./Components/HeroInfo";
 export default class App extends React.Component {
   state = {
     currentHero: "",
+    filters: {
+      all: true,
+    },
   };
 
   chooseHeroFn = (heroName) => {
@@ -17,14 +20,28 @@ export default class App extends React.Component {
     this.setState({ currentHero: heroObject });
   };
 
+  useFilters = (data) => {
+    console.log("on app:", data);
+    this.setState({ filters: data });
+  };
+
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log("getDerivedStateFromProps", state);
+  //   return { state };
+  // }
+
   render() {
     return (
       <div className="app">
         <Header />
-        <Filters />
+        <Filters filterFn={this.useFilters} />
         <div className="hero-wrapper">
           <HeroInfo hero={this.state.currentHero} />
-          <HeroCards superHeroes={superHeroes} hoverHero={this.chooseHeroFn} />
+          <HeroCards
+            filters={this.state.filters}
+            superHeroes={superHeroes}
+            hoverHero={this.chooseHeroFn}
+          />
         </div>
       </div>
     );

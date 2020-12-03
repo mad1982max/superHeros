@@ -23,21 +23,19 @@ export class HeroCards extends React.Component {
     let element = e.currentTarget;
     let name = element.dataset.name;
     let checkedHeroes;
-    let greyFlag = false;
 
     if (!this.state.checkedHeroes.includes(name)) {
       checkedHeroes = this.state.checkedHeroes.concat(name);
-      greyFlag = true;
     } else {
       checkedHeroes = this.state.checkedHeroes.filter((hero) => hero !== name);
     }
     this.setState((state) => ({
       checkedHeroes,
     }));
-    this.viewChecked(element, greyFlag);
+    this.viewChecked(element);
   };
 
-  viewChecked = (element, greyFlag) => {
+  viewChecked = (element) => {
     element.classList.toggle("checkedGrey");
   };
 
@@ -45,8 +43,63 @@ export class HeroCards extends React.Component {
     this.props.hoverHero("");
   };
 
+  transformFilters = (filterObj) => {
+    let array = [];
+    let keys = Object.keys(filterObj);
+    for (let key of keys) {
+      if (filterObj[key]) array.push(key);
+    }
+    return array;
+  };
+
+  getFilterKey = (filter) => {
+    let key = "";
+    filter = filter.toLowerCase();
+    switch (filter) {
+      case "all":
+        key = "all";
+        break;
+      case "male":
+      case "female":
+      case "it":
+        key = "gender";
+        break;
+      case "marvel":
+      case "dc":
+        key = "company";
+        break;
+      default:
+        console.log("filter unknown", filter);
+    }
+    return key;
+  };
+
+  filterHeroes = (arr, filterArr) => {
+    if (filterArr.includes("all")) {
+      return arr;
+    } else {
+      let heroToShowFiltered = arr.slice();
+      for (let valueInFilter of filterArr) {
+        let key = this.getFilterKey(valueInFilter);
+        console.log(key);
+        heroToShowFiltered = heroToShowFiltered
+          .filter((hero) => hero[key] === valueInFilter)
+          .slice();
+      }
+      return heroToShowFiltered;
+    }
+  };
+
   render() {
-    let users = this.props.superHeroes.map(({ name, photo, company }) => {
+    let filterArr = this.transformFilters(this.props.filters);
+    console.log(filterArr);
+
+    let heroToShowFiltered = this.filterHeroes(
+      this.props.superHeroes,
+      filterArr
+    );
+
+    let users = heroToShowFiltered.map(({ name, photo, company }) => {
       let imageHero = images(`./${photo}`).default;
 
       return (

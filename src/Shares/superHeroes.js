@@ -5,6 +5,7 @@ const superHeroes = [
     weight: 80,
     photo: "im.jpg",
     company: "Marvel",
+    gender: "male",
   },
   {
     name: "HULK",
@@ -12,6 +13,7 @@ const superHeroes = [
     weight: 300,
     photo: "hulk.jpg",
     company: "Marvel",
+    gender: "male",
   },
   {
     name: "Batman",
@@ -19,6 +21,7 @@ const superHeroes = [
     weight: 90,
     photo: "batman.jpg",
     company: "DC",
+    gender: "male",
   },
   {
     name: "Super Woman",
@@ -26,6 +29,7 @@ const superHeroes = [
     weight: 60,
     photo: "sw.jpg",
     company: "DC",
+    gender: "female",
   },
   {
     name: "Super Man",
@@ -33,6 +37,7 @@ const superHeroes = [
     weight: 85,
     photo: "sm.jpg",
     company: "DC",
+    gender: "male",
   },
   {
     name: "Penguin",
@@ -40,6 +45,7 @@ const superHeroes = [
     weight: 65,
     photo: "penguin.jpg",
     company: "DC",
+    gender: "male",
   },
   {
     name: "Cat Woman",
@@ -47,6 +53,7 @@ const superHeroes = [
     weight: 55,
     photo: "catwoman.jpg",
     company: "DC",
+    gender: "female",
   },
   {
     name: "Rorschach",
@@ -54,6 +61,7 @@ const superHeroes = [
     weight: 75,
     photo: "rorschach.jpg",
     company: "DC",
+    gender: "male",
   },
 ];
 export { superHeroes };
